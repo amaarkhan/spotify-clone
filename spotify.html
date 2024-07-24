@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify clone</title>
+    <style>
+       body{
+        background-color:antiquewhite;
+       }
+       *{
+           margin: 0;
+           padding: 0;
+       }
+       nav{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+       }
+       nav ul{
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        height: 65px;
+        background-color: black;
+        color: white;
+       }
+       nav ul li{
+        margin: 0 12px;
+       }
+       .brand img{
+        width: 44px;
+        padding: 0 8px;
+       }
+       .brand{
+        display: flex;
+        align-items: center;
+        font-weight: bolder;
+        font-size: 1.5rem;
+    }
+    .container{
+        min-height: 75vh;
+        background-color: black;
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        display: flex;
+        margin: 23px auto;
+        width: 70%;
+        border-radius: 12px;
+        background-image: url("/spotify/bg.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover; /* You can also use 'contain' if you want the entire image to fit within the container */
+        background-position: center;
+    }
+    .Bottom{
+        position: sticky;
+        height: 15px;
+        background-color: black;
+        bottom: 0;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        color: white;
+        flex-direction: column;
+        padding: 34px;
+        
+
+    }
+    .icons{
+        margin-top: 14px;
+    }
+    .icons i{
+     cursor: pointer;
+    }
+    #myProgressBar{
+        width: 80vw;
+        margin: 0 100px;
+        cursor: pointer;
+        
+    }
+    .songItemContainer{
+
+        margin-top: 50px;
+    }
+    .songItem{
+        display: flex;
+       background-color: white;
+        /* width: 80%; */
+        height: 50px;
+        color: black;
+        margin: 12px 0;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 24px;
+    }
+    .songItem img{
+        width: 25px;
+        margin:0 23px;
+
+    }
+    .timestamp{
+        margin: 0 23px;
+    }
+    .timestamp i{
+        cursor: pointer;
+    }
+ 
+    .songInfo{
+        position: absolute;
+        left: 10vw;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+    .songInfo img{
+        opacity: 0;
+        transition: opacity 1s ease-in;
+    }
+    
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="brand"><img src="/spotify/logo.jpeg" alt="">Spotify</li>
+            <li>Home</li>
+            <li>About</li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="songList">
+            <h1> Best of NCS - No Copyright Sounds</h1>
+            <div class="songItemContainer">
+                <div class="songItem">
+                    <img src="/spotify/cover1.jpeg" alt="1">
+                    <span class="songname">let me love you</span>
+                    <span class="songlistplay"><span class="timestamp">5:34 <i id="1" class="fas songItemPlay fa-play"></i></span>
+                    </span>
+                </span>
+                </div>
+                <div class="songItem">
+                    <img src="/spotify/cover1.jpeg" alt="1">
+                    <span class="songname">let me love you</span>
+                    <span class="songlistplay"><span class="timestamp">5:34 <i id="2" class="fas songItemPlay fa-play"></i></span>
+                    </span>
+                </span>
+                </div>
+                <div class="songItem">
+                    <img src="/spotify/cover1.jpeg" alt="1">
+                    <span class="songname">let me love you</span>
+                    <span class="songlistplay"><span class="timestamp">5:34 <i id="3" class="fas songItemPlay fa-play"></i></span>
+                    </span>
+                </span>
+                </div>
+                <div class="songItem">
+                    <img src="/spotify/cover1.jpeg" alt="1">
+                    <span class="songname">let me love you</span>
+                    <span class="songlistplay"><span class="timestamp">5:34 <i id="4" class="fas songItemPlay fa-play"></i></span>
+                    </span>
+                </span>
+                </div>
+                <div class="songItem">
+                    <img src="/spotify/cover1.jpeg" alt="1">
+                    <span class="songname">let me love you</span>
+                    <span class="songlistplay"><span class="timestamp">5:34 <i  id="5" class="fas songItemPlay fa-play"></i></span>
+                    </span>
+                </span>
+                </div>
+                <div class="songItem">
+                    <img src="/spotify/cover1.jpeg" alt="1">
+                    <span class="songname">let me love you</span>
+                    <span class="songlistplay"><span class="timestamp">5:34 <i id="6" class="fas songItemPlay fa-play"></i></span>
+                    </span>
+                </span>
+                </div>
+                <div class="songItem">
+                    <img src="/spotify/cover1.jpeg" alt="1">
+                    <span class="songname">let me love you</span>
+                    <span class="songlistplay"><span class="timestamp">5:34 <i id="7" class="fas songItemPlay fa-play"></i></span>
+                    </span>
+                </span>
+                </div>
+           
+            </div>
+
+        </div>
+        <div class="songBanner">
+
+
+        </div>
+
+    </div>
+
+    <div class="Bottom">
+        <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
+        <div class="icons">
+           <i class="fas fa-3x fa-step-backward" id="previous"></i>
+            <i class="fas fa-3x fa-play-circle" id="masterplay"></i>
+            <i class="fas fa-3x fa-step-forward" id="next"></i>
+        </div>
+        <div class="songInfo">
+            <img src="/spotify/playing.png" width="32px" id="gif" >Let me love you justen bieber
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/ba582e601a.js" crossorigin="anonymous"></script>
+   
+   
+   <script>
+
+console.log("Welcome to Spotify clone");
+let songIndex = 0;
+let audioElement = new Audio('/spotify/1.mp3');
+let masterplay = document.getElementById('masterplay');
+let myProgressBar = document.getElementById('myProgressBar');
+let gif = document.getElementById('gif');
+let songItems = document.getElementsByClassName('songItem');
+
+let songs = [
+    {name: "ABCD let me love you", filepath: "/spotify/1.mp3", coverpath: "/spotify/cover1.jpeg"},
+    {name: "EFGH let me love you", filepath: "/spotify/2.mp3", coverpath: "/spotify/cover1.jpeg"},
+    {name: "heduj let me love you", filepath: "/spotify/3.mp3", coverpath: "/spotify/cover1.jpeg"},
+    {name: "ddjd let me love you", filepath: "/spotify/4.mp3", coverpath: "/spotify/cover1.jpeg"},
+    {name: "dhddj let me love you", filepath: "/spotify/5.mp3", coverpath: "/spotify/cover1.jpeg"},
+    {name: "llkll let me love you", filepath: "/spotify/1.mp3", coverpath: "/spotify/cover1.jpeg"},
+    {name: "zzzzzzzzzz let me love you", filepath: "/spotify/2.mp3", coverpath: "/spotify/cover1.jpeg"}
+]
+
+Array.from(songItems).forEach((element, i) => {
+    element.getElementsByTagName("img")[0].src = songs[i].coverpath;
+    element.getElementsByClassName("songname")[0].innerText = songs[i].name;
+});
+
+masterplay.addEventListener('click', () => {
+    if (audioElement.paused || audioElement.currentTime <= 0) {
+        audioElement.play();
+        masterplay.classList.remove('fa-play-circle');
+        masterplay.classList.add('fa-pause-circle');
+        gif.style.opacity = 1;
+    } else {
+        audioElement.pause();
+        masterplay.classList.remove('fa-pause-circle');
+        masterplay.classList.add('fa-play-circle');
+        gif.style.opacity = 0;
+    }
+});
+
+audioElement.addEventListener('timeupdate', () => {
+    console.log('timeupdate'); 
+    progress = parseInt((audioElement.currentTime / audioElement.duration) * 100);
+    console.log(progress);
+    myProgressBar.value = progress;
+});
+
+myProgressBar.addEventListener('change', () => {
+    audioElement.currentTime = myProgressBar.value * audioElement.duration / 100;
+});
+
+
+const makeAllPlays = () => {
+
+  
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) => {
+        element.classList.remove('fa-pause-circle');
+        element.classList.add('fa-play-circle');
+       
+        
+    });
+}
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) => {
+    element.addEventListener('click', (e) => {
+        console.log(e.target);
+        makeAllPlays();
+        songIndex = parseInt(e.target.id);
+        e.target.classList.remove('fa-play-circle');
+        e.target.classList.add('fa-pause-circle');
+        audioElement.src = `/spotify/${songIndex}.mp3`;
+       audioElement.currentTime = 0;    
+        audioElement.play();
+        masterplay.classList.remove('fa-play-circle');
+        masterplay.classList.add('fa-pause-circle');
+    })
+});
+
+document.getElementById('next').addEventListener('click', () => {
+    if (songIndex >= 5) {
+        songIndex = 0;
+    } else {
+        songIndex += 1;
+    }
+    audioElement.src = `/spotify/${songIndex}.mp3`;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    makeAllPlays();
+    masterplay.classList.remove('fa-play-circle');
+    masterplay.classList.add('fa-pause-circle');
+});
+
+
+document.getElementById('previous').addEventListener('click', () => {
+    if (songIndex < 0) {
+        songIndex = 0;
+    } else {
+        songIndex -= 1;
+    }
+    audioElement.src = `/spotify/${songIndex}.mp3`;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    makeAllPlays();
+    masterplay.classList.remove('fa-play-circle');
+    masterplay.classList.add('fa-pause-circle');
+});
+
+    </script>
+</body>
+</html>
